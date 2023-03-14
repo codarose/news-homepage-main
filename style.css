@@ -27,6 +27,8 @@ html {
 body {
   max-width: 1050px;
   margin: 50px auto 0px;
+  background: hsl(36, 100%, 99%);
+
   font-family: "inter", sans-serif;
 }
 
@@ -68,7 +70,6 @@ header {
     display: grid;
     gap: 1.5rem;
     grid-template-columns: 1fr 1fr;
-   
   }
   .header-row {
     display: flex;
@@ -124,17 +125,16 @@ header {
     grid-template-columns: 1fr 1fr;
     min-height: 200px;
   }
-.side-articles, .bottom-articles {
-  display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  min-height: 300px;
-  gap: 1rem; 
-}
+  .side-articles,
+  .bottom-articles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 300px;
+    gap: 1rem;
+  }
   .side-articles h2 {
     text-align: center;
   }
-
- 
 }
 .main-article h1 {
   font-family: "inter extra bold", sans-serif;
@@ -311,10 +311,11 @@ header {
     right: 0;
     bottom: 0;
     left: 30%;
-    z-index: 99;
+    z-index: 100;
     list-style: none;
-
+    filter: brightness(100%);
     padding-top: 7rem;
+    margin-top: 0; 
     background: hsl(36, 100%, 99%);
   }
 
@@ -328,5 +329,23 @@ header {
 
   .show-mobile-nav {
     transform: translateY(0);
+  }
+
+  div#cover {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
+  }
+
+  div#cover.covering {
+    display: block;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 50%);
   }
 }
